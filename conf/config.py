@@ -17,24 +17,35 @@ You NEED to set the parameters in BASIC SETTINGS
 #COINDAEMON_TRUSTED_PASSWORD = 'FtrHtYKaY9hSKdpBWK3SRC4RsD2FSYrp391heQZw1DHP'
 
 COINDAEMON_WALLETS = {
-    'ALC': {
-        'wallet': 'AStYhybeX7vJbz5fvsUHMjKhmXsTbotqwS',
+	
+    'ZCC': {
+        'wallet': 'ZWnvv3wDqneFu77DuXCrscTGFZh5shj1Ny', #zcc地址
         'hosts': [{
-            'host': 'localhost',
-            'port': 55555,
-            'user': 'alcohoinrpc',
-            'password': '8Wbbi6ExSWujz3ByGz8LGqDWehaGXw8EEcJCtWNceyCG'
-        }]
-    },
-    'THOR': {
-        'wallet': 'TWyJbM2dMjcQG5TJM8z5FquScvRdzhVsns',
-        'hosts': [{
-            'host': 'localhost',
-            'port': 29551,
-            'user': 'thorcoinrpc',
-            'password': '33xaw8cZU5AtdN6vrmaVfnEUmUhKRg5CrqxxoeNi5gmA'
+            'host': '192.168.20.180',
+            'port': 10583,
+            'user': 'test',
+            'password': 'test'
         }]
     }
+    #,
+    #'ALC': {
+    #    'wallet': 'AStYhybeX7vJbz5fvsUHMjKhmXsTbotqwS',
+    #    'hosts': [{
+    #        'host': 'localhost',
+    #        'port': 55555,
+    #        'user': 'alcohoinrpc',
+    #        'password': '8Wbbi6ExSWujz3ByGz8LGqDWehaGXw8EEcJCtWNceyCG'
+    #    }]
+    #},
+    #'THOR': {
+    #    'wallet': 'TWyJbM2dMjcQG5TJM8z5FquScvRdzhVsns',
+    #    'hosts': [{
+    #        'host': 'localhost',
+    #        'port': 29551,
+    #        'user': 'thorcoinrpc',
+    #        'password': '33xaw8cZU5AtdN6vrmaVfnEUmUhKRg5CrqxxoeNi5gmA'
+    #    }]
+    #}
     #,
     #'LTC': {
     #    'wallet': 'LX2NaYzhmTMm2Kzo5syuS4E8arNB6Wd8kf',
@@ -56,7 +67,7 @@ COINDAEMON_WALLETS = {
 # Until AutoReward Selecting Code has been implemented the below options are used to select the type of coin
 # For Reward type there is POW and POS. please ensure you choose the currect type.
 # For Coins which support TX Messages please enter yes in the TX selection
-COINDAEMON_ALGO = 'scrypt'
+COINDAEMON_ALGO = 'scrypt-jane'
 COINDAEMON_Reward = 'POW'
 COINDAEMON_TX = 'no'
 # ******************** BASIC SETTINGS ***************
@@ -138,7 +149,7 @@ DB_PGSQL_SCHEMA = 'public'
 DB_MYSQL_HOST = 'localhost'
 DB_MYSQL_DBNAME = 'pooldb'
 DB_MYSQL_USER = 'pooldb'
-DB_MYSQL_PASS = '5zygZNHP4GuK32HeGh8zGRoLMbL2mGhm'
+DB_MYSQL_PASS = '1234567890'
 DB_MYSQL_PORT = 3306		# Default port for MySQL
 
 # ******************** Adv. DB Settings *********************
@@ -155,13 +166,13 @@ DB_USERCACHE_TIME = 600		# How long the usercache is good for before we refresh
 # ******************** Pool Settings *********************
 
 # User Auth Options
-USERS_AUTOADD = False		# Automatically add users to db when they connect.
+USERS_AUTOADD = True		# Automatically add users to db when they connect.自动添加矿工，免验证
                                 # This basically disables User Auth for the pool.
-USERS_CHECK_PASSWORD = False	# Check the workers password? (Many pools don't)
+USERS_CHECK_PASSWORD = False	# Check the workers password? (Many pools don't)是否坚持密码
 
 # Transaction Settings
 COINBASE_EXTRAS = '/stratumPool/'			# Extra Descriptive String to incorporate in solved blocks
-ALLOW_NONLOCAL_WALLET = False				# Allow valid, but NON-Local wallet's
+ALLOW_NONLOCAL_WALLET = True				# Allow valid, but NON-Local wallet's
 
 # Coin Daemon communication polling settings (In Seconds)
 PREVHASH_REFRESH_INTERVAL = 5 	# How often to check for new Blocks
@@ -178,7 +189,7 @@ VDIFF_X2_TYPE = True  # powers of 2 e.g. 2,4,8,16,32,64,128,256,512,1024
 VDIFF_FLOAT = False    # Use float difficulty
 
 # Pool Target (Base Difficulty)
-POOL_TARGET = 32                        # Pool-wide difficulty target int >= 1
+POOL_TARGET = 1                        # Pool-wide difficulty target int >= 1
 
 # Variable Difficulty Enable
 VARIABLE_DIFF = True                # Master variable difficulty enable
@@ -187,7 +198,7 @@ VARIABLE_DIFF = True                # Master variable difficulty enable
 #VARDIFF will start at the POOL_TARGET. It can go as low as the VDIFF_MIN and as high as min(VDIFF_MAX or Liteconin's difficulty)
 USE_COINDAEMON_DIFF = False   # Set the maximum difficulty to the litecoin difficulty. 
 DIFF_UPDATE_FREQUENCY = 86400 # Update the litecoin difficulty once a day for the VARDIFF maximum
-VDIFF_MIN_TARGET = 16                #  Minimum Target difficulty 
+VDIFF_MIN_TARGET = 1                #  Minimum Target difficulty 
 VDIFF_MAX_TARGET = 1024                # Maximum Target difficulty 
 VDIFF_TARGET_TIME = 15                # Target time per share (i.e. try to get 1 share per this many seconds)
 VDIFF_RETARGET_TIME = 120                # Check to see if we should retarget this often
