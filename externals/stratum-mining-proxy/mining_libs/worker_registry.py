@@ -1,3 +1,5 @@
+
+# dboss 猜测： 矿工注册认证
 import time
 
 import stratum.logger
