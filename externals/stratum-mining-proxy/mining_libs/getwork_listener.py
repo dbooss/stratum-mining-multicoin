@@ -1,3 +1,5 @@
+# 基本用不到此功能，此功能用于给getwork协议的矿机使用的，此种矿机效率低。所以基本可以不用这个功能
+
 import json
 import time
 
