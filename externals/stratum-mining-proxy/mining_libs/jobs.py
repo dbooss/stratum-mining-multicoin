@@ -1,4 +1,4 @@
-# 用于job的区块以及部件的组装
+# dboss：猜测：用于job的区块以及部件的组装
 
 import binascii
 import time
