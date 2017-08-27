@@ -1,3 +1,4 @@
+# 猜测dboss：用于stratum协议矿机，任务的分发
 import time
 import binascii
 
